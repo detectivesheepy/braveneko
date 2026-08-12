@@ -8,7 +8,7 @@ FROM ghcr.io/m1k1o/neko/brave:latest AS runtime
 # tells neko-rooms which version of the API to use
 LABEL net.m1k1o.neko.api-version=3
 
-COPY --from=server /src/bin/plugins/ /etc/neko/plugins/
+COPY --from=server /etc/neko/plugins/ /etc/neko/plugins/
 # Original: COPY --from=server /src/bin/neko /usr/bin/neko
 COPY --from=server /usr/bin/neko /usr/bin/neko
 COPY --from=client /var/www /var/www
