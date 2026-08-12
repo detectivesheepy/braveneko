@@ -12,7 +12,7 @@ COPY --from=server /src/bin/plugins/ /etc/neko/plugins/
 # Original: COPY --from=server /src/bin/neko /usr/bin/neko
 COPY --from=server /usr/bin/neko /usr/bin/neko
 COPY --from=client /src/dist/ /var/www
-COPY --from=xorg-deps /usr/local/lib/xorg/modules/drivers/dummy_drv.so /usr/lib/xorg/modules/drivers/dummy_drv.so
-COPY --from=xorg-deps /usr/local/lib/xorg/modules/input/neko_drv.so /usr/lib/xorg/modules/input/neko_drv.so
+COPY --from=xorg-deps /usr/lib/xorg/modules/drivers/dummy_drv.so /usr/lib/xorg/modules/drivers/dummy_drv.so
+COPY --from=xorg-deps /usr/lib/xorg/modules/input/neko_drv.so /usr/lib/xorg/modules/input/neko_drv.so
 
 # COPY config.yml /etc/neko/neko.yaml
